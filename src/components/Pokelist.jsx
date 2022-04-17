@@ -1,46 +1,44 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 import Pokecard from "./Pokecard";
+import { getAllPokemonsName, getPokemon } from "../services";
 import "../styles/Pokelist.css";
+
+
+const limit = 20;
+let offset = 0;
 
 function Pokelist() {
   const [allPokemons, setAllPokemons] = useState([]);
-  const [pokeUrl, setPokeUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+  
 
   const getPokemons = async () => {
-    await axios.get(pokeUrl).then((response) => {
-      response.data.results.map(async (pokemon) => {
-        await axios
-          .get(pokemon.url)
-          .then((res) =>
-           setAllPokemons(  (currentList) =>  [...currentList, res.data])
-          );
-      });
-
-      setPokeUrl(response.data.next);
-    });
+     let pokemons = await Promise.all((await getAllPokemonsName(offset,limit)).map(async name => await getPokemon(name))); 
+     setAllPokemons(prev => [...prev, ...pokemons]);
+     offset += 20;
   };
 
+  console.log(allPokemons);  
   useEffect(() => {
     getPokemons();
-    
   }, []);
 
   return (
     <div className="pokelist">
       <div className="pokelist-list">
-        { allPokemons.sort((first, second) => first.id - second.id).map( (pokemon, index) => {
-           return  (
-            <Pokecard
-              id={pokemon.id}
-              name={pokemon.name}
-              image={pokemon.sprites.other.dream_world.front_default}
-              types={pokemon.types}
-              key={index}
-            ></Pokecard>
-          );
-        })}
+        {allPokemons
+          .sort((first, second) => first.id - second.id)
+          .map((pokemon, index) => {
+            return (
+              <Pokecard
+                id={pokemon.id}
+                name={pokemon.name}
+                image={pokemon.image}
+                types={pokemon.types}
+                key={index}
+              ></Pokecard>
+            );
+          })}
       </div>
       <button className="pokelist-btn" onClick={getPokemons}>
         Load more
