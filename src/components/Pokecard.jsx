@@ -6,7 +6,7 @@ function Pokecard({id,name,image,types}) {
     return (
         <div className='pokecard'>
             <div className={`pokecard-container ${types[0]}-gradient`}>
-            <p className='pokecard-id'>#{id}</p>
+            <p className='pokecard-id'>{(id<10? `#00${id}`: (id<100)?`#0${id}`:id)}</p>
             <img className='pokecard-img' src={image} alt={name}></img>
             <h2 className='pokecard-name'>{name}</h2>
             <div className='pokecard-types'>
