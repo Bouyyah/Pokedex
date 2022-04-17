@@ -1,0 +1,233 @@
+.normal {
+  background-color: #a8a77a;
+}
+
+.normal-gradient {
+  background: rgb(168, 167, 122);
+  background: linear-gradient(
+    180deg,
+    rgba(168, 167, 122, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.fire {
+  background-color: #ee8130;
+}
+
+.fire-gradient {
+  background: rgb(238, 129, 48);
+  background: linear-gradient(
+    180deg,
+    rgba(238, 129, 48, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.water {
+  background-color: #6390f0;
+}
+
+.water-gradient {
+  background: rgb(99, 144, 240);
+  background: linear-gradient(
+    180deg,
+    rgba(99, 144, 240, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.electric {
+  background-color: #f7d02c;
+}
+
+.electric-gradient {
+  background: rgb(247, 208, 44);
+  background: linear-gradient(
+    180deg,
+    rgba(247, 208, 44, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.grass {
+  background-color: #7ac74c;
+}
+
+.grass-gradient {
+  background: rgb(122, 199, 76);
+  background: linear-gradient(
+    180deg,
+    rgba(122, 199, 76, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.ice {
+  background-color: #96d9d6;
+}
+
+.ice-gradient {
+  background: rgb(150, 217, 214);
+  background: linear-gradient(
+    180deg,
+    rgba(150, 217, 214, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.fighting {
+  background-color: #c22e28;
+}
+
+.fighting-gradient {
+  background: rgb(194, 46, 40);
+  background: linear-gradient(
+    180deg,
+    rgba(194, 46, 40, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.poison {
+  background-color: #a33ea1;
+}
+
+.poison-gradient {
+  background: rgb(163, 62, 161);
+  background: linear-gradient(
+    180deg,
+    rgba(163, 62, 161, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.ground {
+  background-color: #e2bf65;
+}
+
+.ground-gradient {
+  background: rgb(226, 191, 101);
+  background: linear-gradient(
+    180deg,
+    rgba(226, 191, 101, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.flying {
+  background-color: #a98ff3;
+}
+
+.flying-gradient {
+  background: rgb(169, 143, 243);
+  background: linear-gradient(
+    180deg,
+    rgba(169, 143, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.psychic {
+  background-color: #f95587;
+}
+
+.psychic-gradient {
+  background: rgb(249, 85, 135);
+  background: linear-gradient(
+    180deg,
+    rgba(249, 85, 135, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.bug {
+  background-color: #a6b91a;
+}
+
+.bug-gradient {
+  background: rgb(166, 185, 26);
+  background: linear-gradient(
+    180deg,
+    rgba(166, 185, 26, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.rock {
+  background-color: #b6a136;
+}
+
+.rock-gradient {
+  background: rgb(182, 161, 54);
+  background: linear-gradient(
+    180deg,
+    rgba(182, 161, 54, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.ghost {
+  background-color: #735797;
+}
+
+.ghost-gradient {
+  background: rgb(115, 87, 151);
+  background: linear-gradient(
+    180deg,
+    rgba(115, 87, 151, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.dragon {
+  background-color: #6f35fc;
+}
+
+.dragon-gradient {
+  background: rgb(111, 53, 252);
+  background: linear-gradient(
+    180deg,
+    rgba(111, 53, 252, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.dark {
+  background-color: #705746;
+}
+
+.dark-gradient {
+  background: rgb(112, 87, 70);
+  background: linear-gradient(
+    180deg,
+    rgba(112, 87, 70, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.steel {
+  background-color: #b7b7ce;
+}
+
+.steel-gradient {
+  background: rgb(183, 183, 206);
+  background: linear-gradient(
+    180deg,
+    rgba(183, 183, 206, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
+
+.fairy {
+  background-color: #d685ad;
+}
+
+.fairy-gradient {
+  background: rgb(214, 133, 173);
+  background: linear-gradient(
+    180deg,
+    rgba(214, 133, 173, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+}
