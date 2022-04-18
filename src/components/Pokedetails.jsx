@@ -70,9 +70,17 @@ function Pokedetails() {
                 <p>{training.growth_rate}</p>
               </div>
             </div>
-            <div className="training"></div>
+            
           </div>
+          <div className="details">
+             <p className="title">Evolution</p>
+             <div className="evolutions"></div>
+            </div>
+            <div className="details">
+
+            </div>
         </div>
+        
       </div>
     </div>
   );

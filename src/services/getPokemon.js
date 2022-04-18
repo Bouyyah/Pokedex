@@ -41,7 +41,7 @@ export async function  getPokemon(pokeName) {
             pokemon.id = res.id;
             pokemon.name = res.name;
             res.types.map(type => pokemon.types.push(type.type.name));
-            pokemon.image = res.sprites.other.dream_world.front_default;
+            pokemon.image = res.sprites.other["official-artwork"].front_default;
 
             pokemon.bio.height = res.height;
             pokemon.bio.weight = res.weight;

@@ -1,5 +1,5 @@
 .pokelist {
-   
+   margin: 6rem;
     padding: 2rem;
     
 }
@@ -7,8 +7,9 @@
 .pokelist-list {  
     width: 100%; 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    justify-content: center;
+    grid-gap: 1.5rem;
 }
 
 

@@ -57,5 +57,11 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    line-height: .5;
+    
+}
+
+.evolutions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }

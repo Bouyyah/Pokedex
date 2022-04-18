@@ -4,6 +4,13 @@
     box-shadow: 0 .5rem 1.25rem .1rem rgba(0,0,0,.5);
     background-color: white;
     border-radius: 2rem;
+    width: 27rem;
+}
+
+@media  screen and  (max-width : 425px) {
+    .pokecard {
+        width: 25rem;
+    }
 }
 
 
@@ -25,20 +32,21 @@
     font-size: 2.5rem;
     font-weight: 700;
     opacity: .5;
+    margin: 1rem 0;
 }
 
 .pokecard-img {
-    height: 12rem;
-    max-width: 15rem;
+   
+    width: 85%;
     margin-top: -1rem;
-    margin-bottom: 1rem;
+    
 }
 
 .pokecard-name{
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 700;
-    line-height: 1.2;
     text-transform: capitalize;
+    margin: 1rem 0;
 }
 
 .pokecard-types {    
@@ -47,10 +55,11 @@
 }
 
 .pokecard-type {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     margin-left: 1rem;
     padding: .5rem 1rem;
     color: whitesmoke;
    border-radius: .5rem;
+   margin-bottom: 1rem;
 }
