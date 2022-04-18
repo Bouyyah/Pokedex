@@ -19,7 +19,7 @@ export async function  getPokemon(pokeName) {
         },
         'training': {
             'base_exp': 0,
-            'base_happines': 0,
+            'base_happiness': 0,
             'catch_rate': 0,
             'growth_rate': ''
         },
@@ -46,7 +46,7 @@ export async function  getPokemon(pokeName) {
             pokemon.bio.height = res.height;
             pokemon.bio.weight = res.weight;
             res.abilities.map(ability => pokemon.bio.abilities.push(ability));
-            pokemon.training.base_exp = res.base_exp;
+            pokemon.training.base_exp = res.base_experience;
 
             pokemon.stats.hp = res.stats[0].base_stat;
             pokemon.stats.atk = res.stats[1].base_stat;
@@ -61,7 +61,7 @@ export async function  getPokemon(pokeName) {
                 pokemon.bio.description = specie.flavor_text_entries[0].flavor_text;
                 pokemon.bio.habitat = specie.habitat.name;
                 pokemon.bio.shape = specie.shape.name;
-                pokemon.training.base_happines = specie.base_happiness;
+                pokemon.training.base_happiness = specie.base_happiness;
                 pokemon.training.catch_rate = specie.capture_rate;
                 pokemon.training.growth_rate = specie.growth_rate.name;
 

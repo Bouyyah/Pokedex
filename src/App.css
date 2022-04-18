@@ -1,3 +1,8 @@
+.App {
+    background-image: url(./ressources/bg-tile.png);
+   background-repeat: repeat;
+}
+
 .link{
     text-decoration: none;
     color: inherit;

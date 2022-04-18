@@ -1,0 +1,61 @@
+.pokedetails {
+    margin: 5rem;   
+    height: 100%;
+}
+
+.pokedetails-container{
+    display: grid;
+    grid-template-rows: unset;
+    grid-template-columns: 32rem 1fr;
+    grid-gap: 4rem;
+    align-items: center;
+    justify-items: center;
+    height: max-content;
+    font-size: small;
+    width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+    .pokedetails-container{
+        grid-template-rows: 420px 1fr;
+     grid-template-columns: unset;
+    }
+
+    .bio-training{
+        display: flex;
+    flex-direction: column;
+    }
+}
+
+.pokecard-wrapper{
+ width: 26rem;
+}
+
+.bio-training{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.details {
+    margin: 2rem 0;
+    height: max-content;
+    padding: 0 2rem;
+}
+
+.title {
+    font-weight: 700;
+    font-size: medium;
+}
+
+.text {
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+}
+
+.bio-details-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    line-height: .5;
+}
