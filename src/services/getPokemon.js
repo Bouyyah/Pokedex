@@ -67,6 +67,7 @@ export async function  getPokemon(pokeName) {
 
                 await axios.get(specie.evolution_chain.url).then(response => {
                     const evo = response.data;
+                    pokemon.evolution.push(evo.chain.species.name);
                     if (evo.chain.evolves_to.length > 0 && evo.chain !== undefined) {
                         pokemon.evolution.push(evo.chain.evolves_to[0].species.name);
 
