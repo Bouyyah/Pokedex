@@ -74,7 +74,17 @@ function Pokedetails() {
           </div>
           <div className="details">
              <p className="title">Evolution</p>
-             <div className="evolutions"></div>
+             <div className="evolutions">
+                 {console.log(evolution)}
+                 {
+                    //  [{id,name,image},...evolution].sort((first,second)=>first.id-second.id).map((evo, index) => {
+                    //      return (<div key={index} className="evolution-card">
+                    //          <p>{evo.id}</p>
+                             
+                    //      </div>)
+                    //  })
+                 }
+             </div>
             </div>
             <div className="details">
 
