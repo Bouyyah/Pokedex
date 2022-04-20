@@ -1,11 +1,13 @@
-import React from "react";
+import React,{useState} from "react";
 import { useLocation } from "react-router-dom";
 import Pokecard from "./Pokecard";
 import "../styles/Pokedetails.css";
 import "../styles/Pokecard.css";
 
 function Pokedetails() {
-  const {
+  let pokemonDetails = useLocation().state;
+
+  const [{
     id,
     name,
     image,
@@ -14,10 +16,13 @@ function Pokedetails() {
     stats,
     training,
     types,
-  } = useLocation().state;
+  },setPokemon] = useState(pokemonDetails);
+
+  
 
   return (
     <div className="pokedetails">
+        {console.log(pokemonDetails)}
       <div className="pokedetails-container">
         <div className="pokecard-wrapper">
           <Pokecard id={id} name={name} image={image} types={types}></Pokecard>
@@ -27,7 +32,7 @@ function Pokedetails() {
           <div className="bio-training">
             <div className="details">
               <h2 className="title">Biographie</h2>
-              <p className="text">{bio.description}</p>
+              <p className="text" id="bio-text">{bio.description}</p>
               <div className="bio-details">
                 <div className="bio-details-row">
                   <p>Shape :</p>
@@ -75,19 +80,33 @@ function Pokedetails() {
           <div className="details">
              <p className="title">Evolution</p>
              <div className="evolutions">
-                 {console.log(evolution)}
+                 
                  {
-                    //  [{id,name,image},...evolution].sort((first,second)=>first.id-second.id).map((evo, index) => {
-                    //      return (<div key={index} className="evolution-card">
-                    //          <p>{evo.id}</p>
-                             
-                    //      </div>)
-                    //  })
+                     evolution.sort((first,second)=>first.id-second.id).map((evo, index) => {
+                         return (<div key={index} className="evolution-card" >
+                             <p >{evo.id}</p>
+                             <div className={`evo-image ${evo.type}-gradient`}>
+                                 <img src={evo.image} alt={evo.name}></img>
+                             </div>
+                             <p >{evo.name}</p>
+                         </div>)
+                     })
                  }
              </div>
             </div>
             <div className="details">
-
+                 <p className="title">Stats</p>
+                 <div className="stats-container">
+                     
+                     {
+                         Object.entries(stats).map((stat,index) => {    
+                            return (<div className="stat" key={index}>
+                                <p>{stat[0]}</p>
+                                <p className="stat-num">{stat[1]}</p>
+                            </div>)
+                        })
+                     }
+                 </div>
             </div>
         </div>
         

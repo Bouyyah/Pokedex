@@ -33,40 +33,41 @@ export async function getPokemon(pokeName) {
       speed: 0,
     },
   };
-  await axios.get(pokeUrl).then(async (response) => {
-    const res = response.data;
+  
+  let pokemonDetailsRes = await axios.get(pokeUrl);
+  const res = pokemonDetailsRes.data;
+  let speciesRes = await axios.get(res.species.url);
+  const specie = speciesRes.data;
 
-    pokemon.id = res.id;
-    pokemon.name = res.name;
-    res.types.map((type) => pokemon.types.push(type.type.name));
-    pokemon.image = res.sprites.other["official-artwork"].front_default;
+  pokemon.id = res.id;
+  pokemon.name = res.name;
+  res.types.map((type) => pokemon.types.push(type.type.name));
+  pokemon.image = res.sprites.other["official-artwork"].front_default;
 
-    pokemon.bio.height = res.height;
-    pokemon.bio.weight = res.weight;
-    res.abilities.map((ability) => pokemon.bio.abilities.push(ability));
-    pokemon.training.base_exp = res.base_experience;
+  pokemon.bio.height = res.height;
+  pokemon.bio.weight = res.weight;
+  res.abilities.map((ability) => pokemon.bio.abilities.push(ability));
+  pokemon.training.base_exp = res.base_experience;
 
-    pokemon.stats.hp = res.stats[0].base_stat;
-    pokemon.stats.atk = res.stats[1].base_stat;
-    pokemon.stats.def = res.stats[2].base_stat;
-    pokemon.stats.sp_atk = res.stats[3].base_stat;
-    pokemon.stats.sp_def = res.stats[4].base_stat;
-    pokemon.stats.speed = res.stats[5].base_stat;
+  pokemon.stats.hp = res.stats[0].base_stat;
+  pokemon.stats.atk = res.stats[1].base_stat;
+  pokemon.stats.def = res.stats[2].base_stat;
+  pokemon.stats.sp_atk = res.stats[3].base_stat;
+  pokemon.stats.sp_def = res.stats[4].base_stat;
+  pokemon.stats.speed = res.stats[5].base_stat;
 
-    await axios.get(res.species.url).then(async (response) => {
-      const specie = response.data;
-      pokemon.bio.description = specie.flavor_text_entries[0].flavor_text;
-      pokemon.bio.habitat = specie.habitat.name;
-      pokemon.bio.shape = specie.shape.name;
-      pokemon.training.base_happiness = specie.base_happiness;
-      pokemon.training.catch_rate = specie.capture_rate;
-      pokemon.training.growth_rate = specie.growth_rate.name;
+  
 
-      (async () => {
-        pokemon.evolution = await evolutions(specie.evolution_chain.url);
-      })();
-    });
-  });
+  pokemon.bio.description = specie.flavor_text_entries[0].flavor_text;
+  pokemon.bio.habitat = specie.habitat.name;
+  pokemon.bio.shape = specie.shape.name;
+  pokemon.training.base_happiness = specie.base_happiness;
+  pokemon.training.catch_rate = specie.capture_rate;
+  pokemon.training.growth_rate = specie.growth_rate.name;
+
+  (async () => {
+    pokemon.evolution = await evolutions(specie.evolution_chain.url);
+  })();
 
   return pokemon;
 }
@@ -75,31 +76,30 @@ async function evolutions(url) {
   let evos = [];
 
   const getevodata = async (evoname) => {
-    return await axios.get(mainUrl + evoname).then((res) => {
-      let { id, name } = res.data;
-      let image = res.data.sprites.other["official-artwork"].front_default;
+    let res = await axios.get(mainUrl + evoname);
+    let { id, name } = res.data;
+    let image = res.data.sprites.other["official-artwork"].front_default;
+    let type = res.data.types[0].type.name;
 
-      return { id, name, image };
-    });
+    return { id, name, image, type };
   };
 
-  await axios.get(url).then((response) => {
-    const evo = response.data;
+  let response = await axios.get(url);
+  const evo = response.data;
 
-    (async () => evos.push(await getevodata(evo.chain.species.name)))();
+  (async () => evos.push(await getevodata(evo.chain.species.name)))();
 
-    if (evo.chain !== undefined && evo.chain.evolves_to.length > 0) {
+  if (evo.chain !== undefined && evo.chain.evolves_to.length > 0) {
+    (async () =>
+      evos.push(await getevodata(evo.chain.evolves_to[0].species.name)))();
+
+    if (evo.chain.evolves_to[0].evolves_to.length > 0) {
       (async () =>
-        evos.push(await getevodata(evo.chain.evolves_to[0].species.name)))();
-
-      if (evo.chain.evolves_to[0].evolves_to.length > 0) {
-        (async () =>
-          evos.push(
-            await getevodata(evo.chain.evolves_to[0].evolves_to[0].species.name)
-          ))();
-      }
+        evos.push(
+          await getevodata(evo.chain.evolves_to[0].evolves_to[0].species.name)
+        ))();
     }
-  });
+  }
 
   return evos;
 }
