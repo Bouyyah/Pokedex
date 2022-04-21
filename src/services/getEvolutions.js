@@ -17,7 +17,7 @@ export const getEvolutions =  async (url) => {
             )
              
         }
-        if (evo.chain.evolves_to[0].evolves_to.length > 0) {
+        if (evo.chain.evolves_to[0] && evo.chain.evolves_to[0].evolves_to.length > 0) {
             await getPokemon(evo.chain.evolves_to[0].evolves_to[0].species.name).then( res =>
                 evos.push(res)
             )

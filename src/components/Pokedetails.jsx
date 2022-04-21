@@ -78,7 +78,7 @@ function Pokedetails({pokemon,evolutionData}) {
           <div className="details">
             <p className="title">Evolution</p>
             <div className="evolution">
-              <Pokevolution evolutionUrl={evolution} evolutionData={evolutionData}/>
+              <Pokevolution  evolutionData={evolutionData}/>
             </div>
           </div>
           <div className="details">

@@ -2,22 +2,8 @@ import React, { useState, useEffect } from "react";
 import { getEvolutions } from "../services";
 import '../styles/evolutions.css';
 
-function Pokevolution({evolutionUrl,evolutionData}) {
-//   const [evoUrl,setEvoUrl] = useState(evolutionUrl)
-//   const [evolutionData, setEvolutionData] = useState([]);
-
-//   const fetchEvolutionData =  async (url) => {
-//     let data =  await getEvolutions(url);
-//     setEvolutionData(data);
-//   };
- 
-//   useEffect(() => {
-      
-//     fetchEvolutionData(evoUrl);
-//     setEvoUrl(evoUrl);
-//     console.log(evoUrl)
-//   },[evolutionUrl]);
-
+function Pokevolution({evolutionData}) {
+//   
   if(evolutionData)
   return (
     <div className="evolutions">
