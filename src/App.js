@@ -1,19 +1,20 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Pokelist from "./components/Pokelist";
-import Pokedetails from "./components/Pokedetails";
+import Details from "./pages/Details";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      
 
       <div className="routes">
         <Routes>
-          <Route exact path="/" element={<Pokelist />} />
-          <Route exact path="/pokedetails" element={<Pokedetails />} />
+          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/pokelist" element={<Pokelist />} />
+          <Route exact path="/pokedetails" element={<Details />} />
         </Routes>
       </div>
     </div>

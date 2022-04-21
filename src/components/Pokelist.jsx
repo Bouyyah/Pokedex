@@ -21,7 +21,7 @@ function Pokelist() {
     setOffset(current => current + step);
   };
 
-  
+   
   useEffect(() => {
     getPokemons();
   }, []);

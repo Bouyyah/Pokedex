@@ -2,7 +2,7 @@ import axios from "axios";
 
 const mainUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-export async function getPokemon(pokeName) {
+export async function getPokemon(pokeName, all = false) {
   const pokeUrl = mainUrl + pokeName;
   let pokemon = {
     id: 0,
@@ -34,15 +34,31 @@ export async function getPokemon(pokeName) {
     },
   };
   
+  
   let pokemonDetailsRes = await axios.get(pokeUrl);
   const res = pokemonDetailsRes.data;
+
+  
   let speciesRes = await axios.get(res.species.url);
   const specie = speciesRes.data;
+
+  
+  pokemon.evolution = await evolutions(specie.evolution_chain.url);
+  
 
   pokemon.id = res.id;
   pokemon.name = res.name;
   res.types.map((type) => pokemon.types.push(type.type.name));
   pokemon.image = res.sprites.other["official-artwork"].front_default;
+
+  if(!all){
+    return {
+      id : pokemon.id,
+      name: pokemon.name,
+      image : pokemon.image,
+      types : pokemon.types
+    }
+  }
 
   pokemon.bio.height = res.height;
   pokemon.bio.weight = res.weight;
@@ -65,9 +81,7 @@ export async function getPokemon(pokeName) {
   pokemon.training.catch_rate = specie.capture_rate;
   pokemon.training.growth_rate = specie.growth_rate.name;
 
-  (async () => {
-    pokemon.evolution = await evolutions(specie.evolution_chain.url);
-  })();
+  
 
   return pokemon;
 }

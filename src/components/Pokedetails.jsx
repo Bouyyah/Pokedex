@@ -1,28 +1,26 @@
-import React,{useState} from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
 import Pokecard from "./Pokecard";
+
 import "../styles/Pokedetails.css";
 import "../styles/Pokecard.css";
 
-function Pokedetails() {
-  let pokemonDetails = useLocation().state;
-
-  const [{
-    id,
-    name,
-    image,
-    bio,
-    evolution,
-    stats,
-    training,
-    types,
-  },setPokemon] = useState(pokemonDetails);
-
-  
+function Pokedetails(pokemon) {
+    let {
+        id,
+        name,
+        image,
+        bio,
+        evolution,
+        stats,
+        training,
+        types,
+      } = pokemon.pokemon;
+   console.log(types);
 
   return (
+      
     <div className="pokedetails">
-        {console.log(pokemonDetails)}
+        
       <div className="pokedetails-container">
         <div className="pokecard-wrapper">
           <Pokecard id={id} name={name} image={image} types={types}></Pokecard>
