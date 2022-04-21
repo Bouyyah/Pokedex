@@ -1,26 +1,25 @@
 import React from "react";
 import Pokecard from "./Pokecard";
+import Pokevolution from "./Pokevolution";
 
 import "../styles/Pokedetails.css";
 import "../styles/Pokecard.css";
 
-function Pokedetails(pokemon) {
-    let {
-        id,
-        name,
-        image,
-        bio,
-        evolution,
-        stats,
-        training,
-        types,
-      } = pokemon.pokemon;
-   console.log(types);
-
+function Pokedetails({pokemon,evolutionData}) {
+  let {
+    id,
+    name,
+    image,
+    bio,
+    evolution,
+    stats,
+    training,
+    types,
+  } = pokemon;
+  
+  console.log(pokemon)
   return (
-      
     <div className="pokedetails">
-        
       <div className="pokedetails-container">
         <div className="pokecard-wrapper">
           <Pokecard id={id} name={name} image={image} types={types}></Pokecard>
@@ -30,7 +29,9 @@ function Pokedetails(pokemon) {
           <div className="bio-training">
             <div className="details">
               <h2 className="title">Biographie</h2>
-              <p className="text" id="bio-text">{bio.description}</p>
+              <p className="text" id="bio-text">
+                {bio.description}
+              </p>
               <div className="bio-details">
                 <div className="bio-details-row">
                   <p>Shape :</p>
@@ -73,41 +74,27 @@ function Pokedetails(pokemon) {
                 <p>{training.growth_rate}</p>
               </div>
             </div>
-            
           </div>
           <div className="details">
-             <p className="title">Evolution</p>
-             <div className="evolutions">
-                 
-                 {
-                     evolution.sort((first,second)=>first.id-second.id).map((evo, index) => {
-                         return (<div key={index} className="evolution-card" >
-                             <p >{evo.id}</p>
-                             <div className={`evo-image ${evo.type}-gradient`}>
-                                 <img src={evo.image} alt={evo.name}></img>
-                             </div>
-                             <p >{evo.name}</p>
-                         </div>)
-                     })
-                 }
-             </div>
+            <p className="title">Evolution</p>
+            <div className="evolution">
+              <Pokevolution evolutionUrl={evolution} evolutionData={evolutionData}/>
             </div>
-            <div className="details">
-                 <p className="title">Stats</p>
-                 <div className="stats-container">
-                     
-                     {
-                         Object.entries(stats).map((stat,index) => {    
-                            return (<div className="stat" key={index}>
-                                <p>{stat[0]}</p>
-                                <p className="stat-num">{stat[1]}</p>
-                            </div>)
-                        })
-                     }
-                 </div>
+          </div>
+          <div className="details">
+            <p className="title">Stats</p>
+            <div className="stats-container">
+              {Object.entries(stats).map((stat, index) => {
+                return (
+                  <div className="stat" key={index}>
+                    <p>{stat[0]}</p>
+                    <p className="stat-num">{stat[1]}</p>
+                  </div>
+                );
+              })}
             </div>
+          </div>
         </div>
-        
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Pokecard from "../components/Pokecard";
-
+import '../styles/Homepage.css'
 
 function Homepage() {
     let startersData = [
