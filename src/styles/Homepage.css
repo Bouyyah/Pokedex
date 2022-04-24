@@ -9,6 +9,7 @@
     width: 80%;
     min-height: 80vh;
     padding: 2rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +82,22 @@
     
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:768px ) {
+    .front{
+        flex-direction: column;
+        height: 100rem;
+        padding-top: 5rem;
+    }
+    .front-desc{
+        width: 80%;
+    }
+    .homecard {
+        top: 25rem;
+        left: 25rem;
+    }
+}
+
+@media screen and (max-width:1024px) and (min-width: 770px){
     .front{
         flex-direction: column;
         height: 85rem;
@@ -96,17 +112,29 @@
     }
 }
 
-@media screen and (max-width:768 ) {
-    .front{
-        flex-direction: column;
-        height: 100rem;
-        padding-top: 5rem;
+
+@media screen and (min-width:2000px ) {
+    
+    .front-desc {
+        margin-right: 10rem;
+        width: 65%;
     }
-    .front-desc{
-        width: 80%;
+    .front-desc-text{
+        font-size: 3.5rem;
+        font-weight: 500;
+        line-height: 5rem;
+        word-wrap: break-word;      
     }
-    .homecard {
-        top: 25rem;
-        left: 25rem;
+
+    .front-desc-button {
+        
+        font-size: 4rem;
+        font-weight: 500;
+        padding: 2rem;
+    }
+
+    .front-pokecards{
+        width: 35%;
     }
 }
+
