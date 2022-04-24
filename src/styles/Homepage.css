@@ -1,11 +1,80 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   margin-top: 5%;
+}
 .front {
-    width: 100%;
+    width: 80%;
     min-height: 80vh;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    -webkit-box-shadow: 0 .5rem 1.25rem .1rem rgba(0,0,0,.5);
+    box-shadow: 0 .5rem 1.25rem .1rem rgba(0,0,0,.5);
+    border-radius: 2rem;
+    background-image: url(../ressources/bg-tile.png);
+    background-repeat: repeat;
+   
 }
 
 .front-desc{
+    
+}
+.front-desc-text{
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    word-wrap: break-word;
+    width: 50%;
+}
+
+.front-desc-button {
+    appearance: none;
+    background: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #000;
+    color: #000;
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.front-pokecards {
+    position: relative;
+    
+}
+
+.homecard{
+    position: absolute;
+    top: -5rem;
+    left: -20rem;
+   
+}
+.homecard-bulbasaur {
+    transform: translate(calc(-50% - 190px), calc(-50% + 30px)) rotate(-25deg);
+  z-index: 9;
+}
+
+.homecard-charmander {
+    transform: translate(-50%, -50%) rotate(5deg);
+   
+  z-index: 7;
+  
+}
+
+.homecard-squirtle {
+    transform: translate(calc(-50% - 100px), -50%) rotate(-10deg);
+    
+  z-index: 8;
+     
+}
+
+.homecard:hover {
+    z-index: 10;
     
 }

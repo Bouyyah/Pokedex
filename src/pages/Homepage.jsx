@@ -2,42 +2,36 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Pokecard from "../components/Pokecard";
-import '../styles/Homepage.css'
+import "../styles/Homepage.css";
 
 function Homepage() {
-    let startersData = [
-        {
-          "id": 1,
-          "name": "bulbasaur",
-          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-          "types": [
-            "grass",
-            "poison"
-          ]
-        },
-        {
-          "id": 4,
-          "name": "charmander",
-          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-          "types": [
-            "fire"
-          ]
-        },
-        {
-          "id": 7,
-          "name": "squirtle",
-          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-          "types": [
-            "water"
-          ]
-        }
-      ];
- 
-  return (
-      
-    <div>
-      <Navbar />
+  let startersData = [
+    {
+      id: 1,
+      name: "bulbasaur",
+      image:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      types: ["grass", "poison"],
+    },
+    {
+      id: 4,
+      name: "charmander",
+      image:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      types: ["fire"],
+    },
+    {
+      id: 7,
+      name: "squirtle",
+      image:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      types: ["water"],
+    },
+  ];
 
+  return (
+    <div className="home">
+      
       <div className="front">
         <div className="front-desc">
           <p className="front-desc-text">
@@ -51,21 +45,23 @@ function Homepage() {
             evolutions, going in order of Grass, Fire, Water; the only exception
             is Unova, which begins with Victini, who is then followed by the
             starter Pokémon.
-            <Link to="/pokelist"><button className="front-desc-button">All Pokemons</button></Link>
             
           </p>
+          <Link to="/pokelist">
+              <button className="front-desc-button">All Pokemons</button>
+            </Link>
         </div>
         <div className="front-pokecards">
-          {
-            startersData.map((starter, index) => (
+          {startersData.map((starter, index) => (
+            <div className={`homecard-${starter.name} homecard`} key={index}>
               <Pokecard
-                key={index}
                 id={starter.id}
                 name={starter.name}
                 image={starter.image}
-                types={starter.types} 
+                types={starter.types}
               ></Pokecard>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>

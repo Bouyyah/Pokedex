@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { getEvolutions } from "../services";
+import React from "react";
+
 import '../styles/evolutions.css';
 
 function Pokevolution({evolutionData}) {
