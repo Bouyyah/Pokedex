@@ -34,8 +34,8 @@ function Details() {
   
     useEffect(()=>{
     getPokemonDetails(pokemonName);
-    
     },[pokemonName])
+    
     useEffect(()=>{
       if(pokemon) fetchEvolutionData(pokemon.evolution);
       },[pokemon])
