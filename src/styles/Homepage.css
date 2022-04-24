@@ -16,19 +16,20 @@
     box-shadow: 0 .5rem 1.25rem .1rem rgba(0,0,0,.5);
     border-radius: 2rem;
     background-image: url(../ressources/bg-tile.png);
-    background-repeat: repeat;
-   
+    background-repeat: repeat; 
 }
 
+
+
 .front-desc{
-    
+    width: 50%;
 }
 .front-desc-text{
     font-size: 1.7rem;
     font-weight: 500;
     line-height: 2.5rem;
     word-wrap: break-word;
-    width: 50%;
+    
 }
 
 .front-desc-button {
@@ -46,13 +47,14 @@
 
 .front-pokecards {
     position: relative;
-    
+    width: 50%;
+    height: 100%;
 }
 
 .homecard{
     position: absolute;
     top: -5rem;
-    left: -20rem;
+    left: 40rem;
    
 }
 .homecard-bulbasaur {
@@ -77,4 +79,34 @@
 .homecard:hover {
     z-index: 10;
     
+}
+
+@media screen and (max-width:1024px) {
+    .front{
+        flex-direction: column;
+        height: 85rem;
+        padding-top: 5rem;
+    }
+    .front-desc{
+        width: 80%;
+    }
+    .homecard {
+        top: 25rem;
+        left: 30rem;
+    }
+}
+
+@media screen and (max-width:768 ) {
+    .front{
+        flex-direction: column;
+        height: 100rem;
+        padding-top: 5rem;
+    }
+    .front-desc{
+        width: 80%;
+    }
+    .homecard {
+        top: 25rem;
+        left: 25rem;
+    }
 }
