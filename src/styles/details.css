@@ -1,0 +1,10 @@
+.poke-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0;
+}
+
+.search-bar {
+    margin: 2rem;
+}

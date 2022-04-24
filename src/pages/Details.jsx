@@ -2,6 +2,7 @@ import React,{useEffect, useState} from "react";
 import { useLocation } from "react-router-dom";
 import { getPokemon,getEvolutions } from "../services";
 import Pokedetails from '../components/Pokedetails';
+import '../styles/details.css';
 
 function Details() {
     let pokemonData = useLocation().state;
@@ -34,7 +35,7 @@ function Details() {
     useEffect(()=>{
     getPokemonDetails(pokemonName);
     if(pokemon) fetchEvolutionData(pokemon.evolution);
-    },[pokemonName])
+    },[pokemonName,pokemon])
     useEffect(()=>{
       if(pokemon) fetchEvolutionData(pokemon.evolution);
       },[pokemon])
@@ -44,14 +45,17 @@ function Details() {
     if(pokemon)
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={search} onChange={handleChange}  />
-          <input type="submit" value="Submit" />
+      <div className="poke-search">
+      <form onSubmit={handleSubmit}>
+        <label className="front-desc-text search-label">
+          Find pokemon by name:
+          <input  className="search-bar" type="text" value={search} onChange={handleChange}  />
+          <input className="front-desc-button" type="submit" value="Search" />
         </label>
         
       </form>
+      </div>
+        
         <Pokedetails pokemon={pokemon} evolutionData = {evolutionData}/>
     </div>
   )

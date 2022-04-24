@@ -110,3 +110,10 @@
     font-size: 1.4rem;
     font-weight: 500;
 }
+
+@media screen and (max-width:768px) {
+    .pokedetails-container{
+        grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    }
+}
