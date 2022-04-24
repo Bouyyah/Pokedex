@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 import { getPokemon,getEvolutions } from "../services";
 import Pokedetails from '../components/Pokedetails';
 import '../styles/details.css';
@@ -44,8 +44,12 @@ function Details() {
     
     if(pokemon)
   return (
-    <div>
+    <div className="details-page">
       <div className="poke-search">
+        <Link className="link" to="/pokelist">
+        <button className="front-desc-button">Go back</button>
+        </Link>
+        
       <form onSubmit={handleSubmit}>
         <label className="front-desc-text search-label">
           Find pokemon by name:

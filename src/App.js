@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Pokelist from "./components/Pokelist";
+import Pokelist from "./pages/Pokelist";
 import Details from "./pages/Details";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar";
