@@ -1,11 +1,19 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+
 .navbar {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: .5rem 0rem;
+    
+
 }
 
-.pokedex-img {
-    height: 6rem;
-    width: 25rem;
+.navbar p{
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 2rem;
+    padding: 3rem 0;
+
 }

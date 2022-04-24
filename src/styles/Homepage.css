@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   margin-top: 5%;
+   
 }
 .front {
     width: 80%;
@@ -80,6 +80,32 @@
 .homecard:hover {
     z-index: 10;
     
+}
+@media screen and (max-width:450px ) {
+    .front{
+       
+        height: 100rem;
+        padding-top: 5rem;
+        width: 100%;
+        
+    }
+    .homecard-bulbasaur {
+        transform: translate(calc(-65% - 190px), calc(-50% + 30px)) rotate(-25deg);
+      z-index: 9;
+    }
+    
+    .homecard-charmander {
+        transform: translate(-90%, -45%) rotate(19deg);
+       
+      z-index: 7;
+      
+    }
+    
+    .homecard-squirtle {
+        transform:translate(calc(-75% - 100px), -50%) rotate(353deg);
+        
+      z-index: 8;
+    }    
 }
 
 @media screen and (max-width:768px ) {

@@ -4,11 +4,13 @@ import "./App.css";
 import Pokelist from "./components/Pokelist";
 import Details from "./pages/Details";
 import Homepage from "./pages/Homepage";
+import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
     <div className="App">
-      
+      <Navbar />
 
       <div className="routes">
         <Routes>

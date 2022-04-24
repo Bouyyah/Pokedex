@@ -5,7 +5,7 @@ import pokedex from '../ressources/pokedex.png';
 function Navbar() {
     return (
         <div className="navbar">
-            <img className="pokedex-img" src={pokedex} alt='pokedex'/>
+            <p>Pokedex</p>
         </div>
     )
 }
