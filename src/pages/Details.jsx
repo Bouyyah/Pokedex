@@ -13,13 +13,13 @@ function Details() {
 
  
     const getPokemonDetails = async (name) => {
-        let  tempPokemon = await getPokemon(name,true);
+        const  tempPokemon = await getPokemon(name,true);
         setPokemon(tempPokemon);
       
     }
 
     const fetchEvolutionData =  async (url) => {
-      let data =  await getEvolutions(url);
+      const data =  await getEvolutions(url);
       setEvolutionData(data);
     };
 
@@ -34,8 +34,8 @@ function Details() {
   
     useEffect(()=>{
     getPokemonDetails(pokemonName);
-    if(pokemon) fetchEvolutionData(pokemon.evolution);
-    },[pokemonName,pokemon])
+    
+    },[pokemonName])
     useEffect(()=>{
       if(pokemon) fetchEvolutionData(pokemon.evolution);
       },[pokemon])
