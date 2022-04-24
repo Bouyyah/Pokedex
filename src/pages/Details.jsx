@@ -54,7 +54,7 @@ function Details() {
         <label className="front-desc-text search-label">
           Find pokemon by name:
           <input  className="search-bar" type="text" value={search} onChange={handleChange}  />
-          <input className="front-desc-button" type="submit" value="Search" />
+          <button className="front-desc-button" type="submit" value="submit" >Search</button>
         </label>
         
       </form>
