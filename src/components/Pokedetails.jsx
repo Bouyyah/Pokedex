@@ -17,7 +17,7 @@ function Pokedetails({pokemon,evolutionData}) {
     types,
   } = pokemon;
   
-  console.log(pokemon)
+  
   return (
     <div className="pokedetails">
       <div className="pokedetails-container">
