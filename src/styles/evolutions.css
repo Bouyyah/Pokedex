@@ -1,19 +1,19 @@
 .evolution-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
 
 .evo-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
 }
 
 .evo-image img {
-    width: 90%;
+  width: 90%;
 }

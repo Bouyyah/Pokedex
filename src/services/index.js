@@ -1,5 +1,3 @@
-export { getAllPokemonsName} from './getAllPokemonsName';
-export { getPokemon} from './getPokemon';
-export { getEvolutions} from './getEvolutions';
-
-
+export { getAllPokemonsName } from "./getAllPokemonsName";
+export { getPokemon } from "./getPokemon";
+export { getEvolutions } from "./getEvolutions";

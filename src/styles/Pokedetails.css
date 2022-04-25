@@ -1,119 +1,135 @@
 .pokedetails {
-       
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.pokedetails-container{
-    display: grid;
-    grid-template-rows: unset;
-    grid-template-columns: 32rem 1fr;
-    grid-gap: 4rem;
-    align-items: center;
-    justify-items: center;
-    height: max-content;
-    font-size: small;
-    width: 80%;
-    padding: 1rem;
-    -webkit-box-shadow: 0 .5rem 1.25rem .1rem rgba(0,0,0,.5);
-    box-shadow: 0 .5rem 1.25rem .1rem rgba(0,0,0,.5);
-    border-radius: 2rem;
-    background-image: url(../ressources/bg-tile.png);
-    background-repeat: repeat;
+.pokedetails-container {
+  display: grid;
+  grid-template-rows: unset;
+  grid-template-columns: 32rem 1fr;
+  grid-gap: 4rem;
+  align-items: center;
+  justify-items: center;
+  height: max-content;
+  font-size: small;
+  width: 80%;
+  padding: 1rem;
+  -webkit-box-shadow: 0 0.5rem 1.25rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.5rem 1.25rem 0.1rem rgba(0, 0, 0, 0.5);
+  border-radius: 2rem;
+  background-image: url(../ressources/bg-tile.png);
+  background-repeat: repeat;
 }
 
-@media screen and (max-width: 425px) {
-    .pokedetails-container{
-        grid-template-rows: 420px 1fr;
-     grid-template-columns: unset;
-    }
 
-    .bio-training{
-        display: flex;
-    flex-direction: column;
-    }
+
+.pokecard-wrapper {
+  width: 26rem;
 }
 
-.pokecard-wrapper{
- width: 26rem;
-}
-
-.bio-training{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
-    
+.bio-training {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
 }
 
 #bio-text {
-    word-wrap: break-word;
-    margin-bottom: 1rem;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
 }
 
 .bio-training p {
-    margin: .3rem 0;
+  margin: 0.3rem 0;
 }
 
 .details {
-    margin: 2rem 0;
-    height: max-content;
-    padding: 0 2rem;
+  margin: 2rem 0;
+  height: max-content;
+  padding: 0 2rem;
 }
 
 .title {
-    font-weight: 700;
-    font-size: medium;
-    margin: 1rem 0;
+  font-weight: 700;
+  font-size: medium;
+  margin: 1rem 0;
 }
 
-
-
 .bio-details-row {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .evolutions {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-   
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1rem;
 }
 
-
-
 .stats-container {
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    
-    
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .stat {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    height: 5rem;
-    margin: 1rem 0;
-    font-size: 1.4rem;
-    font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 5rem;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .stat-num {
-    font-size: 1.4rem;
-    font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
-@media screen and (max-width:768px) {
-    .pokedetails-container{
-        grid-template-rows: 1fr 1fr;
+@media screen and (max-width: 768px) {
+  .pokedetails-container {
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
-    }
+  }
+}
+
+
+
+@media screen and (max-width: 425px) {
+  .pokedetails-container {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: unset;
+  }
+  .bio-training {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: unset;
+  }
+  .search-label{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .pokecard-wrapper{
+    width: 80%;
+  }
+  .pokecard{
+    width: 20rem;
+  }
+  .details{
+    width: 80%;
+    padding: 0;
+  }
+  .evolutions {
+    flex-direction: column;
+  }
+  .stats-container{
+    grid-template-columns: repeat(3, auto);
+  }
 }

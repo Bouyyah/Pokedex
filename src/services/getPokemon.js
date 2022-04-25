@@ -33,8 +33,7 @@ export async function getPokemon(pokeName, all = false) {
       speed: 0,
     },
   };
-  
-  
+
   let pokemonDetailsRes = await axios.get(pokeUrl);
   const res = pokemonDetailsRes.data;
 
@@ -43,20 +42,17 @@ export async function getPokemon(pokeName, all = false) {
   res.types.map((type) => pokemon.types.push(type.type.name));
   pokemon.image = res.sprites.other["official-artwork"].front_default;
 
-  if(!all){
+  if (!all) {
     return {
-      id : pokemon.id,
+      id: pokemon.id,
       name: pokemon.name,
-      image : pokemon.image,
-      types : pokemon.types
-    }
+      image: pokemon.image,
+      types: pokemon.types,
+    };
   }
-  
+
   let speciesRes = await axios.get(res.species.url);
   const specie = speciesRes.data;
-
- 
-
 
   pokemon.bio.height = res.height;
   pokemon.bio.weight = res.weight;
@@ -70,8 +66,6 @@ export async function getPokemon(pokeName, all = false) {
   pokemon.stats.sp_def = res.stats[4].base_stat;
   pokemon.stats.speed = res.stats[5].base_stat;
 
-  
-
   pokemon.bio.description = specie.flavor_text_entries[0].flavor_text;
   pokemon.bio.habitat = specie.habitat.name;
   pokemon.bio.shape = specie.shape.name;
@@ -79,9 +73,7 @@ export async function getPokemon(pokeName, all = false) {
   pokemon.training.catch_rate = specie.capture_rate;
   pokemon.training.growth_rate = specie.growth_rate.name;
 
-  pokemon.evolution = specie.evolution_chain.url
-  
- 
+  pokemon.evolution = specie.evolution_chain.url;
+
   return pokemon;
 }
-

@@ -1,46 +1,46 @@
 .pokelist {
-   margin: 6rem;
-    padding: 2rem;
-    
+  margin: 6rem;
+  padding: 2rem;
 }
 
-.pokelist-list {  
-    width: 100%; 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    justify-content: center;
-    grid-gap: 1.5rem;
+.pokelist-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  justify-content: center;
+  grid-gap: 1.5rem;
 }
 
+.pokelist-btn {
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
 
-.pokelist-btn{
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase ;
-    
-    cursor: pointer;
-   
-    margin-top: 5rem;
-  
-    position: relative;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation; 
-    appearance: none;
-    background: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    
-    border: 1px solid #000;
-    color: #000;
-   
-    
+  cursor: pointer;
+
+  margin-top: 5rem;
+
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  appearance: none;
+  background: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+  border: 1px solid #000;
+  color: #000;
+}
+
+@media screen and (max-width: 325px) {
+  .pokelist-list{
+    justify-content: start;
   }
-  
-  
+}

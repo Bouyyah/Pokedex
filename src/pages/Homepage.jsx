@@ -29,11 +29,10 @@ function Homepage() {
   ];
 
   return (
-    <div className="home">
-      
-      <div className="front">
-        <div className="front-desc">
-          <p className="front-desc-text">
+    <div className='home'>
+      <div className='front'>
+        <div className='front-desc'>
+          <p className='front-desc-text'>
             <b>The Pokédex</b> is an invaluable tool to Trainers in the Pokémon
             world. It gives information about all Pokémon in the world that are
             contained in its database. This is a list of Pokémon in the order
@@ -44,21 +43,19 @@ function Homepage() {
             evolutions, going in order of Grass, Fire, Water; the only exception
             is Unova, which begins with Victini, who is then followed by the
             starter Pokémon.
-            
           </p>
-          <Link to="/pokelist">
-              <button className="front-desc-button">All Pokemons</button>
-            </Link>
+          <Link to='/pokelist'>
+            <button className='front-desc-button'>All Pokemons</button>
+          </Link>
         </div>
-        <div className="front-pokecards">
+        <div className='front-pokecards'>
           {startersData.map((starter, index) => (
             <div className={`homecard-${starter.name} homecard`} key={index}>
               <Pokecard
                 id={starter.id}
                 name={starter.name}
                 image={starter.image}
-                types={starter.types}
-              ></Pokecard>
+                types={starter.types}></Pokecard>
             </div>
           ))}
         </div>
